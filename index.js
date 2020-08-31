@@ -11,11 +11,10 @@ async function getUser() {
         let user= await resp.json();        
         user.results.forEach(randomUser =>
             fileSystem.appendFile('usuarios.csv',
-                `${randomUser.name.first}, ${randomUser.name.last}, ${randomUser.email}, ${randomUser.dob.age}, 
-                 ${randomUser.gender}, ${randomUser.login.username}, ${randomUser.login.password}\n`,
+                `${randomUser.name.first}, ${randomUser.name.last}, ${randomUser.email}, ${randomUser.dob.age},${randomUser.gender}, ${randomUser.login.username}, ${randomUser.login.password}\n`,
                 (err) => {
                     if (err) throw err;
-                    console.log('Dados adicionadas ao arquivo usuario.csv');
+                    console.log('Dados adicionados ao arquivo usuario.csv');
                 }
             ));
     }
